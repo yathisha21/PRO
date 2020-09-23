@@ -49,8 +49,11 @@
         <br>slope: the slope of the peak exercise ST segment
         <br>ca: number of major vessels (0–3) colored by flourosopy
         <br>thal: thalassemia (1 = normal; 2 = fixed defect; 3 = reversable defect)
-        <br>target: (1= heart disease or 0 = no heart disease)<p>
-    </div>
+        <br>target: (1= heart disease or 0 = no heart disease)<p><br>
+        
+        Sample Input Values<br>
+        <img style="min-width: 600px" src="/static/hea.png"/ class="center">
+    </div><br>
 
     <div style="color:black; text-align: center">
         <form action="{{ url_for('heartdisease')}}" method="POST">
@@ -65,7 +68,7 @@
 
             <label for="fifth"><strong>Resting Electrocardiographic Results(0 or 1) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label> <input id="fifth" name="restecg" type="number" required="required"><br><br>
 
-            <label for="sixth"><strong>MaxHeartRate (maximum heart rate achieved eg. 156, 173, 187,...) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label> <input id="sixth" name="thalach" type="number" step="any" required="required"><br><br>
+            <label for="sixth"><strong>MaxHeartRate (maximum heart rate achieved eg. 156, 173, 187,...) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label> <input id="sixth" name="thalach" type="number" step="any" required="required"><br><br>
 
             <label for="seventh"><strong>ExerciseInducedAngina (exercise induced angina (1 = yes; 0 = no)) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label> <input id="seventh" name="exang" type="number" required="required"><br><br>
 
