@@ -36,7 +36,11 @@
         Pneumonia is an inflammatory condition of the lung affecting primarily the small air sacs known as alveoli. Symptoms typically include some combination of productive or dry cough, chest pain, fever and difficulty breathing. The severity of the condition is variable.<p>
         <br><p>Chest X-ray images (anterior-posterior) were selected from retrospective cohorts of pediatric patients of one to five years old from Guangzhou Women and Children’s Medical Center, Guangzhou. All chest X-ray imaging was performed as part of patients’ routine clinical care.<br>
         For the analysis of chest x-ray images, all chest radiographs were initially screened for quality control by removing all low quality or unreadable scans. The diagnoses for the images were then graded by two expert physicians before being cleared for training the AI system. In order to account for any grading errors, the evaluation set was also checked by a third expert. There are 5,863 X-Ray images (JPEG) and 2 categories (Pneumonia/Normal).
-        <br><br>Data Source: <a href="https://data.mendeley.com/datasets/rscbjbr9sj/2">Pneumonia Dataset</a></p>
+        <br><br>Data Source: <a href="https://data.mendeley.com/datasets/rscbjbr9sj/2">Pneumonia Dataset</a></p><br>
+	    
+	Sample Input Images<br>
+        <img style="min-width: 250px" src="/static/xray1.png"/ class="one">
+	<img style="min-width: 250px" src="/static/xray2.png"/ class="one">
     </div><br>    
     <div style="color:black; text-align: center">
 			<form action="{{ url_for('pneumoniadisease')}}" method="POST" enctype="multipart/form-data" style="margin-top: 30px; width: 80%; text-align: center; margin: auto">
@@ -155,6 +159,12 @@
 
         .closebtn:hover {
           color: black;
+        }
+	   
+	.one{
+            padding: 0px 10px;
+            display: inline-block;
+            margin: 4px 2px;
         }
     </style>
     <!-- Optional JavaScript -->
