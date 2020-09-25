@@ -17,7 +17,6 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 
 model_heartdisease = pickle.load(open('heartdisease.pkl', 'rb'))
-model_diabetes = pickle.load(open('diabetes.pkl', 'rb'))
 model_liverdisease = pickle.load(open('liverdisease.pkl', 'rb'))
 model_cancer = pickle.load(open('breastcancer.pkl', 'rb'))
 model_malaria = load_model('malariadisease.h5')
@@ -49,26 +48,6 @@ def heartdisease():
             return render_template('heartdisease.html', prediction_text="Great! The person does not have any Heart Disease.", title='Heart Disease')
     else:
         return render_template('heartdisease.html', title='Heart Disease')
-
-
-@app.route('/diabetes', methods=['GET','POST'])
-def diabetes():
-    if request.method == 'POST':
-        Pregnancies=int(request.form['Pregnancies'])
-        Glucose= int(request.form['Glucose'])
-        BloodPressure= int(request.form['BloodPressure'])
-        SkinThickness= int(request.form['SkinThickness'])
-        Insulin= int(request.form['Insulin'])
-        BMI= float(request.form['BMI'])
-        DiabetesPedigreeFunction= float(request.form['DiabetesPedigreeFunction'])
-        Age=int(request.form['Age'])
-        prediction=model_diabetes.predict([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
-        if prediction==1:
-            return render_template('diabetes.html', prediction_text="Oops! The person seems to have diabetes.", title='Diabetes')
-        else:
-            return render_template('diabetes.html', prediction_text="Great! The person does not have diabetes.", title='Diabetes')
-    else:
-         return render_template('diabetes.html', title='Diabetes')
 
     
 @app.route('/liverdisease', methods=['GET','POST'])
