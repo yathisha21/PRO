@@ -22,7 +22,6 @@
           <div class="topnav">
             <a href="{{ url_for('home') }}">Home</a>
             <a href="{{ url_for('heartdisease') }}">Heart Disease</a>
-            <a href="{{ url_for('diabetes') }}">Diabetes</a>
             <a href="{{ url_for('liverdisease') }}">Liver Disease</a>
             <a href="{{ url_for('breastcancer') }}">Breast Cancer</a> 
             <a href="{{ url_for('malariadisease') }}">Malaria</a>
@@ -47,12 +46,12 @@
         <br>exang: exercise induced angina (1 = yes; 0 = no)
         <br>oldpeak: ST depression induced by exercise relative to rest
         <br>slope: the slope of the peak exercise ST segment
-        <br>ca: number of major vessels (0–3) colored by flourosopy
+        <br>ca: number of major vessels (0–4) colored by flourosopy
         <br>thal: thalassemia (1 = normal; 2 = fixed defect; 3 = reversable defect)
         <br>target: (1= heart disease or 0 = no heart disease)<p><br>
         
         <h6>Sample Input Values</h6>
-        <img style="max-width: 550px" src="/static/hea.png"/ class="center">
+        <img style="max-width: 600px" src="/static/hrt.png"/ class="center">
     </div><br>
 
     <div style="color:black; text-align: center">
@@ -76,7 +75,7 @@
 
             <label for="ninth"><strong>ExercisePeakSlope (the slope of the peak exercise ST segment 0, 1, 2) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label> <input id="ninth" name="slope" type="number" required="required"><br><br>
 
-            <label for="tenth"><strong>MajorVesselsNo (number of major vessels (0-3) colored by flourosopy) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label> <input id="tenth" name="ca"  type="number" required="required"><br><br>
+            <label for="tenth"><strong>MajorVesselsNo (number of major vessels (0-4) colored by flourosopy) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label> <input id="tenth" name="ca"  type="number" required="required"><br><br>
 
            <label for="eleventh"><strong>Thalassemia (1 = normal; 2 = fixed defect; 3 = reversable defect) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></label> <input name="thal" id="eleventh" type="number" required="required">
             <br><br><button id="sub" type="submit ">Predict</button>
