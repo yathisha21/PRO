@@ -43,9 +43,9 @@ def heartdisease():
         Thalassemia=int(request.form['thal'])
         prediction=model_heartdisease.predict([[Age, Gender, ChestPain, BloodPressure, ElectrocardiographicResults, MaxHeartRate, ExerciseInducedAngina, STdepression, ExercisePeakSlope, MajorVesselsNo, Thalassemia]])
         if prediction==1:
-            return render_template('heartdisease.html', prediction_text="Oops! The person seems to have Heart Disease.", title='Heart Disease')
+            return render_template('heartdisease_prediction.html', prediction_text="Oops! You seem to have a Heart Disease.", title='Heart Disease')
         else:
-            return render_template('heartdisease.html', prediction_text="Great! The person does not have any Heart Disease.", title='Heart Disease')
+            return render_template('heartdisease_prediction.html', prediction_text="Great! You don't have any Heart Disease.", title='Heart Disease')
     else:
         return render_template('heartdisease.html', title='Heart Disease')
 
@@ -65,9 +65,9 @@ def liverdisease():
         Albumin_and_Globulin_Ratio= float(request.form['Albumin_and_Globulin_Ratio'])
         prediction=model_liverdisease.predict([[Age, Gender, Total_Bilirubin, Direct_Bilirubin, Alkaline_Phosphotase, Alamine_Aminotransferase, Aspartate_Aminotransferase, Total_Protiens, Albumin, Albumin_and_Globulin_Ratio]])
         if prediction==1:
-            return render_template('liverdisease.html', prediction_text="Oops! The person seems to have Liver Disease.", title='Liver Disease')
+            return render_template('liverdisease_prediction.html', prediction_text="Oops! You seem to have Liver Disease.", title='Liver Disease')
         else:
-            return render_template('liverdisease.html', prediction_text="Great! The person does not have any Liver Disease.", title='Liver Disease')
+            return render_template('liverdisease_prediction.html', prediction_text="Great! You don't have any Liver Disease.", title='Liver Disease')
     else:
         return render_template('liverdisease.html', title='Liver Disease')
 
@@ -98,9 +98,9 @@ def breastcancer():
            smoothness_worst, compactness_worst, concavity_worst,
            concave_points_worst, symmetry_worst, fractal_dimension_worst]])
         if prediction==1:
-            return render_template('cancer.html', prediction_text="Oops! The tumor is malignant.", title='Breast Cancer')
+            return render_template('cancer_prediction.html', prediction_text="Oops! The tumor is malignant.", title='Breast Cancer')
         else:
-            return render_template('cancer.html', prediction_text="Great! The tumor is benign.", title='Breast Cancer')
+            return render_template('cancer_prediction.html', prediction_text="Great! The tumor is benign.", title='Breast Cancer')
     else:
         return render_template('cancer.html',title='Breast Cancer')
 
@@ -134,9 +134,9 @@ def malariadisease():
 
         prediction = malaria_predict(file_path)
         if prediction[0][0]>=0.5:
-            return render_template('malariadisease.html', prediction_text="Oops! The cell image indicates the presence of Malaria.", image_name = f.filename, title='Malaria Disease')
+            return render_template('malaria_prediction.html', prediction_text="Oops! The cell image indicates the presence of Malaria.", image_name = f.filename, title='Malaria Disease')
         else:
-            return render_template('malariadisease.html', prediction_text="Great! The person does not seem to have Malaria.", image_name= f.filename, title='Malaria Disease')
+            return render_template('malaria_prediction.html', prediction_text="Great! You don't have Malaria.", image_name= f.filename, title='Malaria Disease')
 
 @app.route('/pneumoniadisease', methods=['GET', 'POST'])
 def pneumoniadisease():
@@ -151,9 +151,9 @@ def pneumoniadisease():
         prediction = pneumonia_predict(file_path)
         pred=np.argmax(prediction, axis=1)
         if pred[0]==1:
-            return render_template('pneumoniadisease.html', prediction_text="Oops! This Chest X-Ray shows an area of lung inflammation indicating the presence of Pneumonia.", file_name = f.filename, title='Pneumonia Disease')
+            return render_template('pneumonia_prediction.html', prediction_text="Oops! This Chest X-Ray shows an area of lung inflammation indicating the presence of Pneumonia.", file_name = f.filename, title='Pneumonia Disease')
         else:
-            return render_template('pneumoniadisease.html', prediction_text="Great! The person does not seem to have Pneumonia.", file_name= f.filename, title='Pneumonia Disease')
+            return render_template('pneumonia_prediction.html', prediction_text="Great! You don't have Pneumonia.", file_name= f.filename, title='Pneumonia Disease')
 
 
 @app.route('/uploads/<filename>')
